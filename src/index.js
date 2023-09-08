@@ -29,7 +29,7 @@ const TASKS = [
 	'Flip a pillow (Activity room)'
 ];
 const N_TASKS = 5;
-const N_IMPOSTORS = 1;
+let N_IMPOSTORS = 1;
 
 let taskProgress = {};
 
@@ -44,12 +44,11 @@ app.get('/admin', (req, res) => {
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 io.on('connection', socket => {
+	const user_count = io.of('/').sockets.size;
+	const player_count = io.of('/').sockets
 	console.log(
-		`A user connected with role: ${socket.handshake.query.role}, total: ${
-			io.of('/').sockets.size
-		}`
-	);
-
+		`A user connected with role: ${socket.handshake.query.role}, total: ${user_count}`);
+	io.emit('new-player', get_player_count(io));
 	socket.on('start-game', () => {
 		// Get player sockets
 		const players = [];
@@ -135,6 +134,11 @@ io.on('connection', socket => {
 		}
 		emitTaskProgress();
 	});
+
+	socket.on('set-impostors', nImpostors => {
+		N_IMPOSTORS = nImpostors;
+		console.log(`Number of impostors is changed to to ${N_IMPOSTORS}`);
+	});
 });
 
 function emitTaskProgress() {
@@ -146,6 +150,16 @@ function emitTaskProgress() {
 	if (total === 1) {
 		io.emit('play-win');
 	}
+}
+
+function get_player_count(io)
+{
+	let player_count = 0;
+	io.of('/').sockets.forEach(socket => {
+		if (socket.handshake.query.role == 'PLAYER')
+			player_count++;
+	});
+	return player_count;
 }
 
 server.listen(PORT, () => console.log(`Server listening on *:${PORT}`));
