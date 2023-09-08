@@ -152,14 +152,14 @@ function emitTaskProgress() {
 	}
 }
 
-function get_player_count(io)
+function get_nplayer()
 {
-	let player_count = 0;
+	let nplayer = 0;
 	io.of('/').sockets.forEach(socket => {
 		if (socket.handshake.query.role == 'PLAYER')
-			player_count++;
+			nplayer++;
 	});
-	return player_count;
+	return (nplayer);
 }
 
 server.listen(PORT, () => console.log(`Server listening on *:${PORT}`));
