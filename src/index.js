@@ -115,20 +115,19 @@ io.on('connection', socket => {
 
 	socket.on('report', () => {
 		io.emit('play-meeting');
-		emitTaskProgress();
 	});
 
 	socket.on('emergency-meeting', () => {
 		io.emit('play-meeting');
-		emitTaskProgress();
 	});
-
+	
 	socket.on('task-complete', taskId => {
 		if (typeof taskProgress[taskId] === 'boolean') {
 			taskProgress[taskId] = true;
 		}
+		emitTaskProgress();
 	});
-
+	
 	socket.on('task-incomplete', taskId => {
 		if (typeof taskProgress[taskId] === 'boolean') {
 			taskProgress[taskId] = false;
