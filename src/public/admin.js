@@ -27,7 +27,7 @@ window.onload = () => {
 };
 
 window.onunload = () => {
-	socket.emit('user-disconnect');
+	socket.emit('disconnect');
 }
 
 /**
@@ -60,6 +60,6 @@ socket.on('play-win', async () => {
 	await SOUNDS.youWin.play();
 });
 
-io.on('new-player', nplayer => {
+socket.on('player-change', nplayer => {
 	player.value = nplayer;
 });

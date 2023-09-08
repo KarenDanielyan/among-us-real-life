@@ -106,6 +106,10 @@ socket.on('play-win', async () => {
 	await playSound(SOUNDS.youWin);
 });
 
+window.onunload = () => {
+	socket.emit('disconnect');
+}
+
 enableSound$.addEventListener('click', async () => {
 	console.log('enable sound');
 	enableSound$.style.display = 'none';

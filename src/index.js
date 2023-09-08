@@ -44,11 +44,11 @@ app.get('/admin', (req, res) => {
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 io.on('connection', socket => {
-	const user_count = io.of('/').sockets.size;
-	const player_count = io.of('/').sockets
+	const user_count = function () { return (io.of('/').sockets.size); }
+
+	io.emit('player-change', get_nplayer());
 	console.log(
-		`A user connected with role: ${socket.handshake.query.role}, total: ${user_count}`);
-	io.emit('new-player', get_player_count(io));
+		`A user connected with role: ${socket.handshake.query.role}, total: ${user_count()}`);
 	socket.on('start-game', () => {
 		// Get player sockets
 		const players = [];
@@ -115,17 +115,18 @@ io.on('connection', socket => {
 
 	socket.on('report', () => {
 		io.emit('play-meeting');
+		emitTaskProgress();
 	});
 
 	socket.on('emergency-meeting', () => {
 		io.emit('play-meeting');
+		emitTaskProgress();
 	});
 
 	socket.on('task-complete', taskId => {
 		if (typeof taskProgress[taskId] === 'boolean') {
 			taskProgress[taskId] = true;
 		}
-		emitTaskProgress();
 	});
 
 	socket.on('task-incomplete', taskId => {
@@ -139,7 +140,12 @@ io.on('connection', socket => {
 		N_IMPOSTORS = nImpostors;
 		console.log(`Number of impostors is changed to to ${N_IMPOSTORS}`);
 	});
+	socket.on('disconnect', () => {
+		console.log(`User disconnected. Total: ${user_count()}`);
+		io.emit('player-change', get_nplayer());
+	});
 });
+
 
 function emitTaskProgress() {
 	const tasks = Object.values(taskProgress);
@@ -160,6 +166,15 @@ function get_nplayer()
 			nplayer++;
 	});
 	return (nplayer);
+}
+
+function get_admin_socket(socket)
+{
+	io.of('/').sockets.forEach(socket => {
+		if (socket.handshake.query.role == 'ADMIN')
+			return (socket);
+	})
+	return (socket);
 }
 
 server.listen(PORT, () => console.log(`Server listening on *:${PORT}`));
