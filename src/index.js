@@ -168,13 +168,4 @@ function get_nplayer()
 	return (nplayer);
 }
 
-function get_admin_socket(socket)
-{
-	io.of('/').sockets.forEach(socket => {
-		if (socket.handshake.query.role == 'ADMIN')
-			return (socket);
-	})
-	return (socket);
-}
-
 server.listen(PORT, () => console.log(`Server listening on *:${PORT}`));
