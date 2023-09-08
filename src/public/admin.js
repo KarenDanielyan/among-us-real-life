@@ -5,10 +5,30 @@ const socket = io({
 });
 
 const startGame$ = document.querySelector('#start-game');
+const impostorsInput = document.getElementById('impostor');
+const setImpostorsButton = document.getElementById('impostor-button');
+const player = document.getElementById('players');
 
 startGame$.addEventListener('click', () => {
 	socket.emit('start-game');
 });
+
+setImpostorsButton.addEventListener('click', () => {
+	const nImpostors = parseInt(impostorsInput.value);
+	localStorage.setItem('impostors', nImpostors);
+	socket.emit('set-impostors', nImpostors);
+});
+
+window.onload = () => {
+	const savedImpostors = localStorage.getItem('impostors');
+	if (savedImpostors) {
+		impostorsInput.value = savedImpostors;
+	}
+};
+
+window.onunload = () => {
+	socket.emit('user-disconnect');
+}
 
 /**
  * Sounds
@@ -38,4 +58,8 @@ socket.on('play-meeting', async () => {
 
 socket.on('play-win', async () => {
 	await SOUNDS.youWin.play();
+});
+
+io.on('new-player', nplayer => {
+	player.value = nplayer;
 });
