@@ -12,13 +12,13 @@
 		<h1>Admin Console</h1>
 		<form>
 			<label for="impostor">Number of impostors:</label><br>
-			<input id="impostor" type="number" min="1" max="42" value="1">
+			<input id="impostor" type="number" min="1" max="10" value="1">
 			<button id="impostor-button">Set Impostors</button><br>
 			<label for="players">Number of Players:</label>
 			<input id="players" type="text" readonly value="0"><br>
+			<button id="start-game">Start Game</button>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js" integrity="sha512-eVL5Lb9al9FzgR63gDs1MxcDS2wFu3loYAgjIH0+Hg38tCS8Ag62dwKyH+wzDb+QauDpEZjXbMn11blw8cbTJQ==" crossorigin="anonymous"></script>
+			<script src="/admin.js"></script>
 		</form>
-		<button id="start-game">Start Game</button>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js" integrity="sha512-eVL5Lb9al9FzgR63gDs1MxcDS2wFu3loYAgjIH0+Hg38tCS8Ag62dwKyH+wzDb+QauDpEZjXbMn11blw8cbTJQ==" crossorigin="anonymous"></script>
-		<script src="/admin.js"></script>
 	</body>
 </html>
