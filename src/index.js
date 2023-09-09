@@ -28,6 +28,7 @@ const TASKS = [
 	'Take a lap (Around pool)',
 	'Flip a pillow (Activity room)'
 ];
+
 const N_TASKS = 5;
 let N_IMPOSTORS = 1;
 
@@ -109,7 +110,6 @@ io.on('connection', socket => {
 				socket.emit('tasks', playerTasks[id]);
 			}
 		}
-
 		emitTaskProgress();
 	});
 
@@ -139,6 +139,7 @@ io.on('connection', socket => {
 		N_IMPOSTORS = nImpostors;
 		console.log(`Number of impostors is changed to to ${N_IMPOSTORS}`);
 	});
+
 	socket.on('disconnect', () => {
 		console.log(`User disconnected. Total: ${user_count()}`);
 		io.emit('player-change', get_nplayer());

@@ -17,7 +17,8 @@ report$.addEventListener('click', () => {
 
 emergencyMeeting$.addEventListener('click', () => {
 	socket.emit('emergency-meeting');
-	emergencyMeeting$.style.display = 'none';
+	emergencyMeeting$.disabled = true;
+	document.getElementById("emgimg").src = "/images/emergency-pressed.png";
 });
 
 socket.on('tasks', tasks => {
