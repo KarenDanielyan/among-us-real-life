@@ -4,6 +4,12 @@ const socket = io({
 	}
 });
 
+const usernameContainer$ = document.getElementById('username-container');
+const gameContainer$ = document.getElementById('game-container');
+
+const submitUsernameButton$ = document.getElementById('submit-username');
+const usernameInput$ = document.getElementById('username-input');
+
 const emergencyMeeting$ = document.querySelector('#emergency-meeting');
 const progressBar$ = document.querySelector('.progress-bar');
 const enableSound$ = document.querySelector('#enable-sound');
@@ -121,3 +127,14 @@ async function playSound(url) {
 	soundPlayer.src = url;
 	await soundPlayer.play();
 }
+
+
+submitUsernameButton$.addEventListener('click', () => {
+    const username = usernameInput$.value;
+
+    if (username.trim() !== '') {
+        usernameContainer$.style.display = 'none';
+        gameContainer$.style.display = 'block';
+    } else {
+    }
+});
