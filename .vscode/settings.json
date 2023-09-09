@@ -1,0 +1,91 @@
+{
+  "editor.tabSize": 4,
+  "editor.renderWhitespace": "all",
+  "editor.insertSpaces": false,
+  "editor.detectIndentation": true,
+  "workbench.statusBar.visible": true,
+  "editor.lineNumbers": "on",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "sameLine",
+  "C_Cpp.vcFormat.space.pointerReferenceAlignment": "left",
+  "C_Cpp.clang_format_sortIncludes": false,
+  "C_Cpp.vcFormat.indent.namespaceContents": true,
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "red",
+      "backgroundColor": "rgba(0,0,0,0)"
+    },
+    {
+      "text": "HACK:",
+      "color": "#ff6600",
+      "backgroundColor": "rgba(0,0,0,0)"
+    },
+    {
+      "text": "NOTE:",
+      "color": "green",
+      "backgroundColor": "rgba(0,0,0,0)"
+    },
+    {
+      "text": "WARN",
+      "color": "yellow",
+      "backgroundColor": "rgba(0,0,0,0)"
+    }
+  ],
+  "C_Cpp_Runner.cCompilerPath": "gcc",
+  "C_Cpp_Runner.cppCompilerPath": "g++",
+  "C_Cpp_Runner.debuggerPath": "gdb",
+  "C_Cpp_Runner.cStandard": "c99",
+  "C_Cpp_Runner.cppStandard": "c++11",
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.useMsvc": false,
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.includePaths": [
+    "${workspaceFolder}/libft/src/**",
+    "${workspaceFolder}/libft/src",
+    "${workspaceFolder}/libft"
+  ],
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+  "C_Cpp_Runner.excludeSearch": [
+    "**/build",
+    "**/build/**",
+    "**/.*",
+    "**/.*/**",
+    "**/.vscode",
+    "**/.vscode/**"
+  ],
+  "cmake.configureOnOpen": false,
+  "files.associations": {
+    "libft.h": "c",
+    "ft_printf.h": "c",
+    "scanner.h": "c",
+    "defines.h": "c",
+    "unistd.h": "c",
+    "minirt.h": "c",
+    "events.h": "c",
+    "stdint.h": "c",
+    "stdbool.h": "c",
+    "memory_resource": "c",
+    "utils.h": "c",
+    "vec3.h": "c",
+    "stdio.h": "c",
+    "helper.h": "c",
+    "mlx_int.h": "c",
+    "debug.h": "c",
+    "string.h": "c",
+    "time.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
+}
