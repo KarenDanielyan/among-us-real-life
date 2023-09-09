@@ -1,7 +1,11 @@
 body {
-    background-color: #111;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
+	background-image: url('images/poster.jpeg');
+	background-size: cover;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	color: #EFEFEF;
+	font-size: 14px;
+	font-family: "Comic Sans MS", sans-serif;
     text-align: center;
     padding: 20px;
 }
