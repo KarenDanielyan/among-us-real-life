@@ -63,3 +63,7 @@ socket.on('play-win', async () => {
 socket.on('player-change', nplayer => {
 	player.value = nplayer;
 });
+
+socket.on('show-tasks', () => {
+
+});
