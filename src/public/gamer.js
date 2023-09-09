@@ -5,9 +5,9 @@ const socket = io({
 });
 
 const emergencyMeeting$ = document.querySelector('#emergency-meeting');
+const progressBar$ = document.querySelector('.progress-bar');
 const enableSound$ = document.querySelector('#enable-sound');
 const progress$ = document.querySelector('#progress');
-const progressBar$ = document.querySelector('.progress-bar');
 const report$ = document.querySelector('#report');
 const tasks$ = document.querySelector('#tasks');
 
