@@ -1,0 +1,63 @@
+###ddd
+POST http://localhost:7000/users HTTP/1.1
+Content-Type: application/json
+
+{
+
+    "ID_42":"92",
+    "displayName": "arman11",
+    "avatarUrl": "http://example.com/newuser.png",
+    "isTwoFactorEnabled": true,
+    "wins": 0,
+    "losses": 0
+}
+###ddd
+POST http://localhost:7000/friends HTTP/1.1
+Content-Type: application/json
+
+{
+    "userid": "12",
+    "friendid":"14"
+}
+###ddd
+GET  http://localhost:7000/friends/12 HTTP/1.1
+
+###ddd
+
+GET http://localhost:7000/users HTTP/1.1
+# Content-Type: application/json
+
+# {
+
+#     "ID_42":"21",
+#     "displayName": "newuser",
+#     "avatarUrl": "http://example.com/newuser.png",
+#     "isTwoFactorEnabled": true,
+#     "wins": 0,
+#     "losses": 0
+# }
+###
+GET http://localhost:7000/users/arman11 HTTP/1.1
+###ddd
+### for getting friend
+GET http://localhost:7000/friends/1
+
+### for add friend
+
+POST http://localhost:7000/friends
+Content-Type: application/json
+
+{
+    "ID_42":"21",
+    "DisplayName": "arno",
+     "AvatarUrl": "http://example.com/newuser.png",
+     "IsTwoFactorEnabled": true,
+     "Wins": 0,
+     "Losses": 0,
+      "friendId": 4 ,
+     "friends" :{"ID_42" :2 }
+}
+
+### for delete friend
+
+GET   http://localhost:7000/pong/40

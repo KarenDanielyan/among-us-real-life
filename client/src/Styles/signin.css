@@ -1,0 +1,271 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.signin {
+  display: grid;
+  background-color:#181818;
+  place-items: center;
+  height: 100vh;
+}
+.background {
+  width: 100px;
+  height: 100px;
+}
+.shape, .eye {
+  padding: 3rem;
+  height: 200px;
+  width: 200px;
+  pointer-events: all;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes circleLeft {
+  0% {
+    right: 100%;
+    background: radial-gradient(circle at 70% 80%, white, black 20px, #00325c 3%, #000 60%, black 100%);
+    }
+  50% {
+    right: 0%;
+    background: radial-gradient(circle at 40% 80%, white, black 20px, #00325c 3%, #000 60%, black 100%);
+  }
+  100% {
+    right: 100%;
+    background: radial-gradient(circle at 70% 80%, white, black 20px, #00325c 3%, #000 60%, black 100%);
+  }
+}
+@keyframes circleRight {
+  0% {
+    right: 0%;
+    background: radial-gradient(circle at 20% 20%, white, black 20px, #dd1212 3%, #000 60%, black 100%);
+    }
+  50% {
+    right: 100%;
+    background: radial-gradient(circle at 70% 20%, white, black 20px, #dd1212 3%, #000 60%, black 100%);
+  }
+  100% {
+    right: 0%;
+    background: radial-gradient(circle at 20% 20%, white, black 20px, #dd1212 3%, #000 60%, black 100%);
+  }
+}
+
+
+@keyframes circleUp {
+  0% {
+    bottom: 0%;
+    background: radial-gradient(circle at 80% 20%, white, black 20px, #0e2b09 3%, #000 60%, black 100%);
+  }
+  50% {
+    bottom: 100%;
+    background: radial-gradient(circle at 80% 70%, white, black 20px, #0e2b09 3%, #000 60%, black 100%);
+  }
+  100% {
+    bottom: 0%;
+    background: radial-gradient(circle at 80% 20%, white, black 20px, #0e2b09 3%, #000 60%, black 100%);
+  }
+}
+
+.link3D{
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+.link3D .link3DItem{
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+.link3D .link3DItem:before,
+.link3D .link3DItem:after{
+  position: absolute;
+  content: attr(link-name);
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.link3D .link3DItem:before{
+  transform: rotateY(0deg) translateZ(25px);
+}
+.link3D .link3DItem:after{
+  border: 5px solid #6a6130;
+  transform: rotateX(90deg) translateZ(25px);
+}
+/* .link3D .link3DItem:after:hover,.link3D .link3DItem:before:hover{
+ 
+} */
+.link3D .link3DItem:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+  
+}
+
+@keyframes circleDown {
+  0% {
+    bottom: 100%;
+    background: radial-gradient(circle at 20% 70%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  }
+  50% {
+    bottom: 0%;
+    background: radial-gradient(circle at 20% 20%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  }
+  100% {
+    bottom: 100%;
+    background: radial-gradient(circle at 20% 70%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  }
+}
+@keyframes circleDownIntra {
+  0% {
+    bottom: 100%;
+    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);
+  }
+  50% {
+    bottom: 0%;
+    background: radial-gradient(circle at 7% 55%, white 1px, #3e2eb0 3%, #2e2e90 60%, black 100%)
+  }
+  100% {
+    bottom: 100%;
+    background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);
+  }
+}
+
+.shape:last-child:hover
+{
+  background: radial-gradient(circle at 7% 55%, white 1px, #3e2eb0 3%, #2e2e90 60%, black 100%)
+}
+.shape:first-child:hover
+{
+  background: radial-gradient(circle at 5% 55%, white 1px, #9e0f37 3%, #290711 60%, black 100%)
+}
+.shape:last-child
+{
+  right: 50%;
+  bottom: 45%;
+  background: radial-gradient(circle at 65% 15%, white 1px, aqua 3%, darkblue 60%, aqua 100%);
+  /* animation: circleDownIntra 7s infinite; */
+}
+
+.shape:first-child {
+  background: radial-gradient(circle at 90% 33%, white 1px, #5c0000 3%, #230505 60%, black 100%);
+  right: 35%;
+  bottom: 15%;
+}
+.shape:nth-child(2), .shape-1 {
+
+  background: radial-gradient(circle at 60% 80%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  right: 75%;
+  bottom: 70%;
+  animation: circleLeft 7s infinite;
+}
+.shape-1
+{
+  right: 100%;
+  /* animation-delay: .9s; */
+}
+.shape-3
+{
+  background: radial-gradient(circle at 40% 10%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  right: 0%;
+  bottom: 10%;
+  animation: circleRight 7s infinite;
+  /* animation-delay: .3s; */
+  
+}
+.shape:nth-child(3), .shape-2 {
+
+  background: radial-gradient(circle at 80% 45%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  right: 75%;
+  bottom: 10%;
+  animation: circleUp 7s infinite;
+}
+.shape-4 {
+
+  background: radial-gradient(circle at 80% 45%, white, black 20px, #fff 3%, #000 60%, black 100%);
+  right: 15%;
+  bottom: 75%;
+  animation: circleDown 7s infinite;
+}
+
+
+.signin > form {
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+}
+form * {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+form h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-weight: 500;
+}
+input {
+  padding: 1rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+::placeholder {
+  color: #e5e5e5;
+  font-size: 0.9rem;
+}
+button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 0.9em 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.social {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.social div {
+  background: red;
+  width: 45%;
+  border-radius: 9999px;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+

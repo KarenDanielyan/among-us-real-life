@@ -1,0 +1,88 @@
+h1 {
+	font-family: 'Comic Sans MS';
+}
+
+button {
+	width: 100%;
+	max-width: 10rem;
+	border-radius: 1rem;
+}
+
+body {
+	background-image: url('images/poster.jpeg');
+	background-size: cover;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	color: #EFEFEF;
+	font-size: 14px;
+	font-family: "Comic Sans MS", sans-serif;
+	text-align: left;
+	margin: 8%;
+}
+
+img {
+	width: 100%;
+}
+
+.role {
+	color: #EFEFEF;
+	font-size: 14px;
+	font-family: "Comic Sans MS", sans-serif;
+}
+
+form {
+	width: 100%;
+    padding: 10px;
+    background-color: rgba(12, 12, 12, 0.5);
+    border-radius: 5px;
+	text-align: left;
+	align-items: center;
+}
+
+#enable-sound {
+	display: block;
+}
+
+p {
+	font-weight: bold;
+}
+
+button:hover {
+	background-color: #b71c1c;
+}
+
+/* Hide the game container by default */
+#game-container {
+    display: block;
+}
+
+/* Style for the username input section */
+#username-container {
+    text-align: center;
+    margin-top: 20%;
+}
+
+/* Style for the username input and submit button */
+#username-input {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#submit-username {
+    padding: 10px 20px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Comic Sans MS", sans-serif;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#submit-username:hover {
+    background-color: #b71c1c;
+}

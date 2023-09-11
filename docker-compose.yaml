@@ -1,0 +1,52 @@
+version: '3.9'
+services:
+  # backend:
+  #   container_name: backend
+  #   build:
+  #     context: backend/
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "7000:7000"
+  #     - "4000:4000"
+  #     - "5500:5500"
+  #     - "4001:4001"
+  #   volumes:
+  #   - /var/www/photos:/app/photos
+  #   restart: on-failure
+    
+  # frontend:
+  #   container_name: frontend 
+  #   build:
+  #     context: frontend/
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+  #   volumes:
+  #   - /var/www/photos:/app/photos
+  #   restart: on-failure
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: on-failure
+    env_file:
+      - .dbenv
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/db_data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "8080:80"
+
+
+
