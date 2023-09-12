@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import photo from "@SRC_DIR/public/images/pong.jpg";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/signin.css"; // Import the CSS file for styling
+import "../styles/Signin.css"; // Import the CSS file for styling
 
 import { useSelector } from "react-redux";
 import { ip } from "../utils/ip";

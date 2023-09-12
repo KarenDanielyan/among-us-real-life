@@ -6,6 +6,7 @@ import { setUser } from '../store/redux';
 
 import { useState } from 'react';
 import { ip } from '../utils/ip';
+import '../Styles/MainAuth.css'
 
 
 export const SetStatus =async (id,num)=>{
@@ -111,8 +112,7 @@ const MainAuth = () => {
 	  }, []);
   return (
 	<>
-
-			<div>Auth 42</div>
+		<form><div id="loading">Loading ...</div></form>
 	</>
   )
 }

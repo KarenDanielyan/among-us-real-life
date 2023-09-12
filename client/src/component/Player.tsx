@@ -15,21 +15,17 @@ function Player() {
 	// const [socket,setSocket] = useState(io("ws://localhost:4242"));
   return (
 	<>
-	
 		{submit ? (<Game/>) : (
-				<>
-				<div id="username-container">
+		<>
+			<div id="username-container">
 				<h1>Enter Your Username</h1>
 				<input type="text" id="username-input" placeholder="Enter your username"/>
 				<button id="submit-username" onClick={()=> setSubmit(true)}>Submit</button>
 			</div>
-			
-			
-			</>
-			
-			)
-		}
 		</>
+			
+		)}
+	</>
 		
   )
 }

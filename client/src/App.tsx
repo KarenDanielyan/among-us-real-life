@@ -17,9 +17,9 @@ function App() {
    
     <Routes>
       <Route path="/"  element={<SignIn />} />
-      <Route path="/home"  element={<Player />} />
-      <Route path="/auth" element={<Auth />} />
-      <Route path="/ft_auth" element={<MainAuth />} />
+      <Route path="/home"  element={<Player />} /> {/*after Submit -> Game  */}
+      <Route path="/auth" element={<Auth />} /> {/*Google loading  */}
+      <Route path="/ft_auth" element={<MainAuth />} /> {/*42 loading  */}
         
       </Routes>
     

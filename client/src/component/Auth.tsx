@@ -3,6 +3,7 @@ import queryString from 'query-string'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ip } from '../utils/ip';
+import '../Styles/Auth.css'
 
 const Auth = () => {
 
@@ -86,7 +87,7 @@ const Auth = () => {
 	  }, [currentUser]);
   return (
 	<>
-			<div>Auth Google</div>
+		<form><div id="loading">Loading ...</div></form>
 
 	</>)
 }

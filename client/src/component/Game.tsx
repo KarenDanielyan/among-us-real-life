@@ -4,6 +4,7 @@ import '../Styles/Players.css'
 import { io } from 'socket.io-client/debug';
 import { ip } from '../utils/ip';
 import { useSelector } from 'react-redux';
+import '../Styles/Game.css'
 
 function Game() {
   const [isSocket,setIsSoket]  = useState(false);
@@ -44,27 +45,29 @@ function Game() {
 	
   return (
 	<>
+      <div id="game-container" >
+        <h1>Among Us</h1>
+        
+        <button id="enable-sound">Enable Sound</button>
     
-    <div id="game-container" >
-			<h1>Among Us</h1>
-			
-			<button id="enable-sound">Enable Sound</button>
-	
-			<button id="report">
-				<img src="../../public/images/report.png" />
-			</button>
-	
-			<button id="emergency-meeting">
-				<img id="emgimg" src="../../public/images/emergency-meeting.png" />
-			</button>
-	
-			<p>Progress is <span id="progress">0</span>% complete</p>
-			<div className="progress">
-				<div className="progress-bar progress-bar-striped bg-success" role="progressbar" style={{width: "0%"}}></div>
-			</div>
-	
-			<h2>Tasks</h2>
-			</div>
+        <button id="report">
+          <img src="../../public/images/report.png" />
+        </button>
+    
+        <button id="emergency-meeting">
+          <img id="emgimg" src="../../public/images/emergency-meeting.png" />
+        </button>
+    
+        <p>Progress is <span id="progress">0</span>% complete</p>
+        <div className="progress">
+          <div className="progress-bar progress-bar-striped bg-success" role="progressbar" style={{width: "0%"}}></div>
+        </div>
+
+        <h2>Tasks</h2>
+        <form>
+          <ol id="tasks"></ol>
+          </form>
+      </div>
   </>
   )
 }
