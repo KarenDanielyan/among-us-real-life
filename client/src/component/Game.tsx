@@ -10,6 +10,7 @@ function Game() {
   const [isSocket,setIsSoket]  = useState(false);
   const [socket,setSocket] = useState(io());
   const user = useSelector((state: AppState) => state.user);
+  const [width, setWidth] = useState(0);
     if(isSocket == false)
     {
 
