@@ -57,7 +57,9 @@ if(isSocket == false)
         
         <button id="enable-sound">Enable Sound</button>
     
-        <button id="report">
+        <button id="report" onClick={() => {
+            console.log("Report button was pressed\n");
+          }}>
           <img src="../../public/images/report.png" />
         </button>
     
