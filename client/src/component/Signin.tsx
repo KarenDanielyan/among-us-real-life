@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import photo from "@SRC_DIR/public/images/pong.jpg";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/Signin.css"; // Import the CSS file for styling
+import "../Styles/Signin.css"; // Import the CSS file for styling
 
 import { useSelector } from "react-redux";
 import { CLIENT_ID, GOOGLE_REDIRECT_URI, ip, redirect_link } from "../utils/ip";
