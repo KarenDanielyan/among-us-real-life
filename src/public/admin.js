@@ -10,6 +10,9 @@ const setImpostorsButton = document.getElementById('impostor-button');
 const finish = document.getElementById('finish-game');
 const player = document.getElementById('players');
 
+const tasksInput = document.getElementById('taskcount');
+const setTaskButton = document.getElementById('tasks-button');
+
 const TASKS = [
 	"1. There is a mouse missing in C2R5S1, find and place it, where it’s supposed to be",
 	"2. The monitors are turned around in C2R9, make sure all of them are placed right",
@@ -93,10 +96,20 @@ setImpostorsButton.addEventListener('click', () => {
 	socket.emit('set-impostors', nImpostors);
 });
 
+setTaskButton.addEventListener('click', () => {
+	const nTasks = parseInt(tasksInput.value);
+	localStorage.setItem('taskcount', nTasks);
+	socket.emit('set-tasks', nTasks);
+});
+
 window.onload = () => {
 	const savedImpostors = localStorage.getItem('impostors');
+	const savedTasks = localStorage.getItem('taskcount');
 	if (savedImpostors) {
 		impostorsInput.value = savedImpostors;
+	}
+	if (savedTasks) {
+		tasksInput.value = savedTasks;
 	}
 };
 

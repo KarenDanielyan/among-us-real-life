@@ -177,6 +177,11 @@ io.on('connection', socket => {
 		console.log(`Number of impostors is changed to to ${N_IMPOSTORS}`);
 	});
 
+	socket.on('set-tasks', nTasks => {
+		N_TASKS = nTasks;
+		console.log(`Number of tasks per player is changed to ${N_TASKS}`);
+	});
+
 	socket.on('disconnect', () => {
 		console.log(`User disconnected. Total: ${user_count()}`);
 		io.emit('player-change', get_nplayer());
