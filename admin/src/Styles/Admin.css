@@ -13,12 +13,14 @@ body {
 }
 
 form {
-	width: 60%;
+	width: 70%;
     margin: 20px auto;
     padding: 10px;
     background-color: rgba(12, 12, 12, 0.5);
     border-radius: 5px;
 	text-align: center;
+    border: solid;
+    border-color: #EFEFEF;
 }
 
 label {
@@ -47,10 +49,7 @@ input[type="text"]:focus {
 
 button {
     padding: 10px 20px;
-    background-color: #d32f2f;
     color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
@@ -60,6 +59,10 @@ button {
     margin: 5px;
 }
 
-button:hover {
-    background-color: #b71c1c;
+#impostor-button, #start-game {
+    background-color: #000000;
+    border: solid;
+    border-color: #EFEFEF;
 }
+
+#impostor-button:hover, #start-game:hover {background-color: #b71c1c;}

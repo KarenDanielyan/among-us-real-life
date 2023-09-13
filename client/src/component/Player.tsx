@@ -19,8 +19,8 @@ function Player() {
 		<>
 			<div id="username-container">
 				<h1>Enter Your Username</h1>
-				<input type="text" id="username-input" placeholder="Enter your username"/>
-				<button id="submit-username" onClick={()=> setSubmit(true)}>Submit</button>
+				<input id="username-input" type="text" placeholder="Enter your username"/>
+				<button id="username-submit" onClick={()=> setSubmit(true)}>Submit</button>
 			</div>
 		</>
 			
