@@ -20,6 +20,10 @@ body {
 	margin: 8%;
 }
 
+#tasks  {
+	list-style-type: none;
+}
+
 img {width: 100%;}
 
 .role {
