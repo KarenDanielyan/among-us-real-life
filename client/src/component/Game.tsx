@@ -12,15 +12,17 @@ function Game() {
   
   const [isSocket,setIsSoket]  = useState(false);
   const [socket,setSocket] = useState(io());
+  const [emergency, setEmergency] = useState('../../public/images/emergency-meeting.png');
+  const [ebstate, setEBState] = useState(false);
   const user = useSelector((state: AppState) => state.user);
   const navigate = useNavigate();
   if(!user)
-    navigate("/",{replace:true})
-    if(isSocket == false)
-    {
-
-      setSocket( io(`${ip}:4000/pong`,{
-        query:{role : 'player'},
+  navigate("/",{replace:true})
+if(isSocket == false)
+{
+  
+  setSocket( io(`${ip}:4000/pong`,{
+    query:{role : 'player'},
         closeOnBeforeunload:true,
         protocols:'ws',
         secure:true,
@@ -36,6 +38,7 @@ function Game() {
       }));
       setIsSoket(true);
     }
+    useEffect(()=>{},[emergency])
     useEffect(()=>{
       socket.connect()
       socket.on("connection",(data)=>{
@@ -58,8 +61,13 @@ function Game() {
           <img src="../../public/images/report.png" />
         </button>
     
-        <button id="emergency-meeting">
-          <img id="emgimg" src="../../public/images/emergency-meeting.png" />
+        <button id="emergency-meeting" disabled={ebstate} onClick={() => {
+            console.log("Emergency Button was pressed");
+            //TODO: Add emit sound event
+            setEmergency('../../public/images/emergency-pressed.png');
+            setEBState(true);
+          }}>
+          <img id="emgimg" src={emergency}/>
         </button>
     
         <p>Progress is <span id="progress">0</span>% complete</p>
