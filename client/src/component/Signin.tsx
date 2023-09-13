@@ -92,9 +92,11 @@ const SignIn = () => {
 
  }, [ftStyle, stopGoogle, stopft])
   const ft_link =
-    import.meta.env.redirect_link ??
-    "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-ba3aea4480c6fd2f33eb1c38078b70eb56bfc32316df9eed3ce24c731b6b48c1&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fft_auth&response_type=code";
-
+    import.meta.env.REACT_APP_redirect_link as string;
+  console.log("=====================================");
+  console.log( process.env);  
+  console.log("=====================================");
+  
   return (
     <>
        <Link
