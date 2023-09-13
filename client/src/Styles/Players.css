@@ -53,12 +53,8 @@ button:hover {
 
 #username-container {
     text-align: center;
+    justify-content: center;
     margin-top: 20%;
-}
-
-#logout-container {
-    text-align: right;
-    margin-left: ;
 }
 
 input[type="text"] {

@@ -31,8 +31,6 @@ function Game() {
           headers:{
               'USER':JSON.stringify({user}) // user will have value after login
           },
-          
-          
       },
       
       }));

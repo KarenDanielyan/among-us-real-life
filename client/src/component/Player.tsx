@@ -31,26 +31,16 @@ function Player() {
 	
   return (
 	<>
-		
-		<>
-			
-			<>
-				<div>
-					<img src={user.avatarurl} alt=""  style={{borderRadius:"50%",width:"300px"}} />
-				</div>
-				<div>
-					<h1>{user.displayname}</h1>
-				</div>
-				<div id="logout-container">
-					<button id="username-submit" onClick={()=> setLogoutSubmit(true)}>Logout</button>
-				</div>
-				<div id="username-container">
-
-					<button id="username-submit" onClick={()=> setUserSubmit(true)}>join game</button>
-				</div>
-			</>
-		</>
-		
+		<div>
+			<img src={user.avatarurl} alt=""  style={{borderRadius:"50%",width:"300px"}} />
+		</div>
+		<div>
+			<h1>{user.displayname}</h1>
+		</div>
+		<div id="username-container">
+			<button id="username-submit" onClick={()=> setUserSubmit(true)}>join game</button>
+			<button id="username-submit" onClick={()=> setLogoutSubmit(true)}>Logout</button>
+		</div>
 	</>
   )
 }
