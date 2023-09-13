@@ -4,12 +4,6 @@ const socket = io({
 	}
 });
 
-const usernameContainer$ = document.getElementById('username-container');
-const gameContainer$ = document.getElementById('game-container');
-
-const submitUsernameButton$ = document.getElementById('submit-username');
-const usernameInput$ = document.getElementById('username-input');
-
 const emergencyMeeting$ = document.querySelector('#emergency-meeting');
 const progressBar$ = document.querySelector('.progress-bar');
 const enableSound$ = document.querySelector('#enable-sound');
@@ -42,14 +36,14 @@ socket.on('tasks', tasks => {
 		// checkbox.name = "name";
 		// checkbox.value = "value";
 		// checkbox.id = "id";
-		checkbox$.onchange = event => {
-			console.log('checkbox change', event.target.checked);
-			if (event.target.checked) {
-				socket.emit('task-complete', taskId);
-			} else {
-				socket.emit('task-incomplete', taskId);
-			}
-		};
+		// checkbox$.onchange = event => {
+		// 	console.log('checkbox change', event.target.checked);
+		// 	if (event.target.checked) {
+		// 		socket.emit('task-complete', taskId);
+		// 	} else {
+		// 		socket.emit('task-incomplete', taskId);
+		// 	}
+		// };
 
 		label$.appendChild(checkbox$);
 		label$.appendChild(document.createTextNode(task));
@@ -129,12 +123,12 @@ async function playSound(url) {
 }
 
 
-submitUsernameButton$.addEventListener('click', () => {
-    const username = usernameInput$.value;
+// submitUsernameButton$.addEventListener('click', () => {
+//     const username = usernameInput$.value;
 
-    if (username.trim() !== '') {
-        usernameContainer$.style.display = 'none';
-        gameContainer$.style.display = 'block';
-    } else {
-    }
-});
+//     if (username.trim() !== '') {
+//         usernameContainer$.style.display = 'none';
+//         gameContainer$.style.display = 'block';
+//     } else {
+//     }
+// });
