@@ -20,9 +20,7 @@ body {
 	margin: 8%;
 }
 
-img {
-	width: 100%;
-}
+img {width: 100%;}
 
 .role {
 	color: #EFEFEF;
@@ -51,29 +49,44 @@ button:hover {
 	background-color: #b71c1c;
 }
 
-/* Hide the game container by default */
-#game-container {
-    display: block;
-}
+#game-container {display: block;}
 
-/* Style for the username input section */
 #username-container {
     text-align: center;
     margin-top: 20%;
 }
 
-/* Style for the username input and submit button */
-#username-input {
+input[type="text"] {
     width: 200px;
-    padding: 10px;
-    font-size: 16px;
+    padding: 15px;
+    border: none;
+    background-color: #b71c1c;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: border-color 0.3s ease-in-out;
+    outline: none;
+	margin: 5px;
 }
 
-#submit-username {
+input[type="text"]:focus {border-bottom: 2px solid #b71c1c;}
+
+#username-input {
+    background-color: transparent;
+    border: solid;
+    border-color: #EFEFEF;
+}
+
+#username-input:hover {background-color: #b71c1c;}
+
+
+#username-submit {
     padding: 10px 20px;
-    background-color: #d32f2f;
+	background-color: #000000;
+    border: solid;
+    border-color: #EFEFEF;
     color: white;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -83,6 +96,6 @@ button:hover {
     transition: background-color 0.3s ease-in-out;
 }
 
-#submit-username:hover {
+#username-submit:hover {
     background-color: #b71c1c;
 }

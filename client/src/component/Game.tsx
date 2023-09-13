@@ -45,8 +45,8 @@ function Game() {
 	
   return (
 	<>
+      <h1>Among Us</h1>
       <div id="game-container" >
-        <h1>Among Us</h1>
         
         <button id="enable-sound">Enable Sound</button>
     
