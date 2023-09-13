@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Auth from './component/Auth';
 
 import MainAuth from './component/MainAuth';
+import Game from './component/Game';
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
     <Routes>
       <Route path="/"  element={<SignIn />} />
       <Route path="/home"  element={<Player />} /> {/*after Submit -> Game  */}
+      <Route path="/game"  element={<Game />} /> {/*after Submit -> Game  */}
       <Route path="/auth" element={<Auth />} /> {/*Google loading  */}
       <Route path="/ft_auth" element={<MainAuth />} /> {/*42 loading  */}
         

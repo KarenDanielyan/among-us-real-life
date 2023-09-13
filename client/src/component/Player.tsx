@@ -21,28 +21,36 @@ function Player() {
 
 	},[userSubmit])
 	useEffect(()=>{
+		if(userSubmit)
+			navigate("/game",{replace:true})
 		if(logoutSubmit == true)
 			dispatch(setUser(null));
-	},[logoutSubmit])
+	},[logoutSubmit,userSubmit])
 	// const [socket,setSocket] = useState(io("ws://localhost:4242"));
+	console.log(user);
+	
   return (
 	<>
 		
 		<>
-			{userSubmit ? (<Game/>) : (
+			
 			<>
+				<div>
+					<img src={user.avatarurl} alt=""  style={{borderRadius:"50%",width:"300px"}} />
+				</div>
+				<div>
+					<h1>{user.displayname}</h1>
+				</div>
 				<div id="logout-container">
 					<button id="username-submit" onClick={()=> setLogoutSubmit(true)}>Logout</button>
 				</div>
 				<div id="username-container">
-					<h1>Enter Your Username</h1>
-					<input id="username-input" type="text" placeholder="Enter your username"/>
-					<button id="username-submit" onClick={()=> setUserSubmit(true)}>Submit</button>
+
+					<button id="username-submit" onClick={()=> setUserSubmit(true)}>join game</button>
 				</div>
 			</>
-		)}
 		</>
-		)}
+		
 	</>
   )
 }

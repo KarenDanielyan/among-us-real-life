@@ -5,15 +5,21 @@ import { io } from 'socket.io-client/debug';
 import { ip } from '../utils/ip';
 import { useSelector } from 'react-redux';
 import '../Styles/Game.css'
+import { useNavigate } from 'react-router-dom';
 
 function Game() {
+  console.log("fffffffffffffffffffff");
+  
   const [isSocket,setIsSoket]  = useState(false);
   const [socket,setSocket] = useState(io());
   const user = useSelector((state: AppState) => state.user);
+  const navigate = useNavigate();
+  if(!user)
+    navigate("/",{replace:true})
     if(isSocket == false)
     {
 
-      setSocket( io(`${ip}:4001/pong`,{
+      setSocket( io(`${ip}:4000/pong`,{
         query:{role : 'player'},
         closeOnBeforeunload:true,
         protocols:'ws',
