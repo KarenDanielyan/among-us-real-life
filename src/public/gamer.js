@@ -33,18 +33,6 @@ socket.on('tasks', tasks => {
 
 		const checkbox$ = document.createElement('input');
 		checkbox$.type = 'checkbox';
-		// checkbox.name = "name";
-		// checkbox.value = "value";
-		// checkbox.id = "id";
-		// checkbox$.onchange = event => {
-		// 	console.log('checkbox change', event.target.checked);
-		// 	if (event.target.checked) {
-		// 		socket.emit('task-complete', taskId);
-		// 	} else {
-		// 		socket.emit('task-incomplete', taskId);
-		// 	}
-		// };
-
 		label$.appendChild(checkbox$);
 		label$.appendChild(document.createTextNode(task));
 

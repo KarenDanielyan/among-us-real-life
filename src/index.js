@@ -145,12 +145,16 @@ io.on('connection', socket => {
 				socket.emit('tasks', playerTasks[id]);
 			}
 		}
-		emitTaskProgress();
 	});
 
 	socket.on('report', () => {
 		io.emit('play-meeting');
 	});
+
+	socket.on('finish-game', () => {
+		io.emit('play-win');
+	});
+
 
 	socket.on('emergency-meeting', () => {
 		io.emit('play-meeting');
@@ -160,14 +164,12 @@ io.on('connection', socket => {
 		if (typeof taskProgress[taskId] === 'boolean') {
 			taskProgress[taskId] = true;
 		}
-		emitTaskProgress();
 	});
 	
 	socket.on('task-incomplete', taskId => {
 		if (typeof taskProgress[taskId] === 'boolean') {
 			taskProgress[taskId] = false;
 		}
-		emitTaskProgress();
 	});
 
 	socket.on('set-impostors', nImpostors => {
@@ -181,17 +183,6 @@ io.on('connection', socket => {
 	});
 });
 
-
-function emitTaskProgress() {
-	const tasks = Object.values(taskProgress);
-	const completed = tasks.filter(task => task).length;
-	const total = completed / tasks.length;
-	io.emit('progress', total);
-
-	if (total === 1) {
-		io.emit('play-win');
-	}
-}
 
 function get_nplayer()
 {

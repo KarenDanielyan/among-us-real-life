@@ -7,6 +7,7 @@ const socket = io({
 const startGame$ = document.querySelector('#start-game');
 const impostorsInput = document.getElementById('impostor');
 const setImpostorsButton = document.getElementById('impostor-button');
+const finish = document.getElementById('finish-game');
 const player = document.getElementById('players');
 
 const TASKS = [
@@ -81,6 +82,10 @@ for (const t of TASKS) {
 startGame$.addEventListener('click', () => {
 	socket.emit('start-game');
 });
+
+finish.addEventListener('click', () => {
+	socket.emit('finish-game');
+})
 
 setImpostorsButton.addEventListener('click', () => {
 	const nImpostors = parseInt(impostorsInput.value);
