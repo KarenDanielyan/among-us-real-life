@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../styles/Signin.css"; // Import the CSS file for styling
 
 import { useSelector } from "react-redux";
-import { ip } from "../utils/ip";
+import { CLIENT_ID, GOOGLE_REDIRECT_URI, ip, redirect_link } from "../utils/ip";
 
 /*import React from 'react';
 
@@ -35,12 +35,11 @@ export default LoginPage;
 */
 
 function getUrl() {
-  console.log("havayiiiiii", import.meta.env.CLIENT_ID);
 
   const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
   const option = {
-    redirect_uri: import.meta.env.GOOGLE_REDIRECT_URI as string,
-    client_id: import.meta.env.CLIENT_ID as string,
+    redirect_uri: GOOGLE_REDIRECT_URI as string,
+    client_id: CLIENT_ID as string,
     access_type: "offline",
     response_type: "code",
     prompt: "consent",
@@ -54,7 +53,7 @@ function getUrl() {
 }
 
 const SignIn = () => {
-	console.log(import.meta.env.IP);
+
 	
   const [stopGoogle, setStopGoogle] = useState(false)
   const [stopft, setStopFt] = useState(false)
@@ -92,9 +91,9 @@ const SignIn = () => {
 
  }, [ftStyle, stopGoogle, stopft])
   const ft_link =
-    import.meta.env.REACT_APP_redirect_link as string;
+    redirect_link as string;
   console.log("=====================================");
-  console.log( process.env);  
+  console.log( ft_link);  
   console.log("=====================================");
   
   return (

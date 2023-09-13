@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { ip } from '../utils/ip';
 import '../Styles/Auth.css'
+import { setUser } from '../store/redux';
 
-const Auth = () => {
+const Auth =  () => {
 
 	// console.log("heeeellloooo");
 	
@@ -30,14 +31,27 @@ const Auth = () => {
 			return response.json()
 		
 		})
-		.then(data => {
+		.then(async(data) => {
 			
 			console.log("daddadadada",data);
+			if (!data.istwofactorenabled)
+			{
+				 
+				dispatch(setUser(null));
+				dispatch(setUser(data));
+				navigate("/home",{replace:true})
+			}
+			else
+			{
 				// console.log("hell: ", loged);
+				
 				console.log("okkk");
 				setCurrentUser(data);
 				// navigate("/twofactor", {replace: true, state: data})
+
+			}
 			// setLoged(data);
+			
 			// Process the response data received from the server
 			console.log(data);
 		})

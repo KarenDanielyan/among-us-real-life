@@ -13,4 +13,14 @@ import { AuthService } from './auth.service';
     },
   ],
 })
-export class AuthModule {}
+export class AuthModule {
+  
+  constructor(){
+
+    console.log("ffffffffffffffffffffffffffffffffffffffffff");
+    console.log("ffffffffffffffffffffffffffffffffffffffffff");
+    console.log("ffffffffffffffffffffffffffffffffffffffffff");
+    console.log("ffffffffffffffffffffffffffffffffffffffffff");
+  }
+  
+}
