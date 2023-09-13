@@ -20,9 +20,7 @@ body {
 	margin: 8%;
 }
 
-img {
-	width: 100%;
-}
+img {width: 100%;}
 
 .role {
 	color: #EFEFEF;
@@ -43,26 +41,19 @@ form {
 	display: block;
 }
 
-p {
-	font-weight: bold;
-}
+p {font-weight: bold;}
 
 button:hover {
 	background-color: #b71c1c;
 }
 
-/* Hide the game container by default */
-#game-container {
-    display: none;
-}
+#game-container {display: none;}
 
-/* Style for the username input section */
 #username-container {
     text-align: center;
     margin-top: 20%;
 }
 
-/* Style for the username input and submit button */
 #username-input {
     width: 200px;
     padding: 10px;

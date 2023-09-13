@@ -12,21 +12,56 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 const TASKS = [
-	"Do 10 reps of machine exercise (Joe's Gym)",
-	'Pour water (Kitchen)',
-	'Sink 1 ball (Billards table)',
-	"Flip water bottle (Michael's room)",
-	'Wash your hands (basement bathroom)',
-	'Wash your hands (1st floor bathroom)',
-	'Take elevator',
-	'Spin 8, 9, or 10 in Life game (Hearth room)',
-	'Beat Smash (Upstairs guest room)',
-	'Hit a layup (Basketball court)',
-	'Take photo (Green screen)',
-	'Mess with Jack (basement)',
-	'Bounce ping pong ball 10 times (front door)',
-	'Take a lap (Around pool)',
-	'Flip a pillow (Activity room)'
+	"There is a mouse missing in C2R5S1, find and place it, where it’s supposed to be",
+	"The monitors are turned around in C2R9, make sure all of them are placed right",
+	"A chair is missing in C1R2S2, find and place it where it is supposed to be",
+	"Fix the keyboards in C2R4",
+	"Place the rag that is on C1R1S2 in its right place (on the empty table)",
+	"Place the rag that is on C2R1S2 in its right place (on the empty table)",
+	"Fix the keyboards in C1R3",
+	"The monitors are turned around in C1R1, make sure all of them are placed right",
+	"There is a white chess knight next to the keyboard in C2R5S4, find and place it on the chess rug",
+	"There is a black chess queen in C2R10, find and place it on the chess rug",
+	"There is a cleaning substance next to C1R1S2, place it in its right place(on the empty table)",
+	"There is a cleaning substance next to C2R1S2, place it in its right place(on the empty table)",
+	"There is a black chess king next to the microwave, find and place it on the chess rug",
+	"Close the microwaves door",
+	"There is a black chess bishop in the fridge, find and place it on the chess rug",
+	"There is a white chess bishop in the freezer, find and place it on the chess rug",
+	"There is a black chess pawn in the first cupboard",
+	"There is a white chess pawn in the second cupboard",
+	"The lockers are open, close them",
+	"The napkins on the kitchen table are missing, find and place them",
+	"There is white chess pawn under the kitchen table, find and place it on the chess rug",
+	"The macs in C2R12 are disconnected from the electricity, turn them on",
+	"The macs in C1R1 are disconnected from the electricity, turn them on",
+	"The stove is empty, fill it with water",
+	"The blue sofa is rotated, make sure it is placed right",
+	"Find the blue armchairs pillow",
+	"Fold the chairs and place them where they are supposed to be",
+	"Place two armchairs under the whiteboard on the 0 floor",
+	"There is a black chess pawn in C2R1S1, find and place it on the chess rug",
+	"There is a black chess pawn in C1R1S2, find and place it on the chess rug",
+	"Find the black chess rook on the road to the 2 floor and place it on the chess rug",
+	"Find the white chess pawn on the road to the 2 floor and place it on the chess rug",
+	"There is a white chess rook in the microwave, find and place it on the chess rug",
+	"There is a black chess king on the red fire box, find and place it on the chess rug",
+	"There is a white chess king on one of the whiteboards, find and place it on the chess rug",
+	"Find the balls in the first floor and place them next to the staffs room",
+	"Find the white chess knight on the road to the 1 floor and place it on the chess rug",
+	"The tables in the incubation room are irregularly placed, place them in the corner, under the window",
+	"The napkin in the incubation room is missing, find and place it on the table",
+	"Find the white pawn in the third cupboard and place it on the chess rug",
+	"Find the books and place them into the safe",
+	"There is a black chess knight in the safe, find and place it on the chess rug",
+	"There is a black chess pawn in the safe, find and place it on the chess rug",
+	"The flowers in the kitchen are missing, find and place them on the table",
+	"There is a white chess bishop on one of the shelfs, find and place it on the chess rug",
+	"Write a code on C, that prints “Hello world!” on the whiteboard in the incubation room",
+	"Solve the problem on the whiteboard (next to TV)",
+	"Solve the problem on the whiteboard (next to water fountain)",
+	"There is a white chess pawn on the water fountain, find and place it on the chess rug",
+	"Fix the hangers and place them in the corner"
 ];
 
 let N_TASKS = 5;
@@ -40,10 +75,6 @@ app.get('/', (req, res) => {
 
 app.get('/admin', (req, res) => {
 	res.sendFile(path.join(__dirname, 'views', 'admin.html'));
-});
-
-app.get('/view', (req, res) => {
-	res.sendFile(path.join(__dirname, 'views', 'view.html'));
 });
 
 app.use('/', express.static(path.join(__dirname, 'public')));
