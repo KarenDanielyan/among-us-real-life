@@ -45,7 +45,7 @@ const TASKS = [
 	"31. Find the black chess rook on the road to the 2 floor and place it on the chess rug",
 	"32. Find the white chess pawn on the road to the 2 floor and place it on the chess rug",
 	"33. There is a white chess rook in the microwave, find and place it on the chess rug",
-	"34. There is a black chess king on the red fire box, find and place it on the chess rug",
+	"34. There is a white chess queen on the red fire box, find and place it on the chess rug",
 	"35. There is a white chess king on one of the whiteboards, find and place it on the chess rug",
 	"36. Find the balls in the first floor and place them next to the staffs room",
 	"37. Find the white chess knight on the road to the 1 floor and place it on the chess rug",

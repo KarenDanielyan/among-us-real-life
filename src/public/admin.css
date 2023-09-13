@@ -21,6 +21,10 @@ form {
 	text-align: center;
 }
 
+#tasks  {
+	list-style-type: none;
+}
+
 label {
     font-weight: bold;
 }
